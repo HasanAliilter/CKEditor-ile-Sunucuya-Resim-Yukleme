@@ -1,6 +1,7 @@
 using CKEditorImageUploadFtp.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Net;
 
 namespace CKEditorImageUploadFtp.Controllers
 {
@@ -25,33 +26,65 @@ namespace CKEditorImageUploadFtp.Controllers
             if (upload != null && upload.Length > 0)
             {
                 var fileName = DateTime.Now.ToString("yyyyMMddHHmmss") + Path.GetFileName(upload.FileName);
-                var uploadPath = Path.Combine(_hostingEnvironment.WebRootPath, "uploaded");
+                var ftpAddress = "";
+                var ftpUserName = "";
+                var ftpPassword = "";
+                var ftpFilePath = ftpAddress + fileName;
 
-                if (!Directory.Exists(uploadPath))
+                try
                 {
-                    Directory.CreateDirectory(uploadPath);
+                    // FTP baðlantýsý ve dosya yükleme
+                    using (var client = new WebClient())
+                    {
+                        client.Credentials = new NetworkCredential(ftpUserName, ftpPassword);
+                        using (var fileStream = new MemoryStream())
+                        {
+                            await upload.CopyToAsync(fileStream);
+                            fileStream.Position = 0;
+                            client.UploadData(ftpFilePath, fileStream.ToArray());
+                        }
+                    }
+
+                    var url = $"{ftpAddress}{fileName}";
+                    return Json(new { uploaded = true, url });
                 }
-
-                var filePath = Path.Combine(uploadPath, fileName);
-
-                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                catch (Exception ex)
                 {
-                    await upload.CopyToAsync(fileStream);
+                    // Hata yönetimi
+                    return Json(new { uploaded = false, url = "", message = ex.Message });
                 }
-
-                var url = $"/uploaded/{fileName}";
-                return Json(new { uploaded = true, url });
             }
             return Json(new { uploaded = false, url = "" });
         }
 
 
-        public async Task<IActionResult> FileBrowserCKEDITOR(IFormFile upload)
+        public async Task<IActionResult> FileBrowserCKEDITOR()
         {
-            var dir = new DirectoryInfo(Path.Combine(Directory.GetCurrentDirectory(), _hostingEnvironment.WebRootPath, "uploaded"));
-            ViewBag.fileInfos = dir.GetFiles();
+            var ftpAddress = "";
+            var ftpUserName = "";
+            var ftpPassword = "";
+
+            List<string> fileList = new List<string>();
+
+            FtpWebRequest request = (FtpWebRequest)WebRequest.Create(ftpAddress);
+            request.Method = WebRequestMethods.Ftp.ListDirectory;
+            request.Credentials = new NetworkCredential(ftpUserName, ftpPassword);
+
+            using (FtpWebResponse response = (FtpWebResponse)request.GetResponse())
+            using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+            {
+                string line = reader.ReadLine();
+                while (!string.IsNullOrEmpty(line))
+                {
+                    fileList.Add(line);
+                    line = reader.ReadLine();
+                }
+            }
+
+            ViewBag.fileList = fileList;
             return View("FileBrowserCKEDITOR");
         }
+
 
         public IActionResult Privacy()
         {

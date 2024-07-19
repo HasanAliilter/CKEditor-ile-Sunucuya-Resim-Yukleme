@@ -1,40 +1,33 @@
 ﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @using System.IO
-@inject Microsoft.AspNetCore.Hosting.IHostingEnvironment _hostingenviroment
+@inject Microsoft.AspNetCore.Hosting.IHostingEnvironment _hostingEnvironment
 
-@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
 <!DOCTYPE html>
 <html>
-    <head>
+<head>
     <meta name="viewport" content="width=device-width" />
-
-
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/jquery/dist/jquery.js"></script>
     <script src="~/ckeditor/ckeditor.js"></script>
-   <script>
-       var funcNum=@(Context.Request.Query["CKEditorFuncNum"]+";")
-       $("#fileExplorer").on('click','img',function(){
-           var fileurl='~/uploaded/'+$(this).attr('title');
+    <script>
+        var funcNum = @(Context.Request.Query["CKEditorFuncNum"]);
+        $("#fileExplorer").on('click', 'img', function () {
+            var fileurl = $(this).data('url');
+            window.opener.CKEDITOR.tools.callFunction(funcNum, fileurl);
+            window.close();
+        }).hover(function () {
+            $(this).css('cursor', 'pointer');
+        });
+    </script>
+</head>
+<body>
 
-                window.opener.CKEDITOR.tools.callFunction(funcNum, fileurl);
-                window.close();
-       }).hover(function(){
-                $(this).css('cursor','pointer');
-       })
-   </script>
+@foreach (var item in ViewBag.fileList)
+{
+    <div class="img-thumbnail">
+        <img src="" data-url="" title="@item" width="120" height="100">
+    </div>
+}
 
-    </head>
-    <body>
-
-    @foreach (var item in ViewBag.fileInfos)
-    {
-        <div class="img-thumbnail">
-            <img src="~/uploaded/@item.Name" title="@item.Name" width="120" height="100">
-        </div>
-    }
-
-    </body>
+</body>
 </html>

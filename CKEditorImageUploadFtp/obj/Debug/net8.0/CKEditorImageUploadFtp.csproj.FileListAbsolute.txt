@@ -241,3 +241,4 @@ C:\Users\HP\source\repos\CKEditorImageUploadFtp\CKEditorImageUploadFtp\bin\Debug
 C:\Users\HP\source\repos\CKEditorImageUploadFtp\CKEditorImageUploadFtp\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
 C:\Users\HP\source\repos\CKEditorImageUploadFtp\CKEditorImageUploadFtp\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\HP\source\repos\CKEditorImageUploadFtp\CKEditorImageUploadFtp\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
+C:\Users\HP\source\repos\CKEditorImageUploadFtp\CKEditorImageUploadFtp\obj\Debug\net8.0\CKEditorImageUploadFtp.sourcelink.json
