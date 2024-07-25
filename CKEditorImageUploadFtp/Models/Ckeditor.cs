@@ -1,6 +1,6 @@
 ﻿namespace CKEditorImageUploadFtp.Models
 {
-    public class models
+    public class Ckeditor
     {
         public string description { get; set; }
     }

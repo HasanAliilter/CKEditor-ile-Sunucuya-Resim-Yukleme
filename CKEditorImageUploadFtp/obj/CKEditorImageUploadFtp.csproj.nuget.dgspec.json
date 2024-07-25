@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HP\\source\\repos\\CKEditorImageUploadFtp\\CKEditorImageUploadFtp\\CKEditorImageUploadFtp.csproj": {}
+    "C:\\Users\\HP\\source\\repos\\CKEditor-ile-Sunucuya-Resim-Yukleme\\CKEditorImageUploadFtp\\CKEditorImageUploadFtp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HP\\source\\repos\\CKEditorImageUploadFtp\\CKEditorImageUploadFtp\\CKEditorImageUploadFtp.csproj": {
+    "C:\\Users\\HP\\source\\repos\\CKEditor-ile-Sunucuya-Resim-Yukleme\\CKEditorImageUploadFtp\\CKEditorImageUploadFtp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\source\\repos\\CKEditorImageUploadFtp\\CKEditorImageUploadFtp\\CKEditorImageUploadFtp.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\source\\repos\\CKEditor-ile-Sunucuya-Resim-Yukleme\\CKEditorImageUploadFtp\\CKEditorImageUploadFtp.csproj",
         "projectName": "CKEditorImageUploadFtp",
-        "projectPath": "C:\\Users\\HP\\source\\repos\\CKEditorImageUploadFtp\\CKEditorImageUploadFtp\\CKEditorImageUploadFtp.csproj",
+        "projectPath": "C:\\Users\\HP\\source\\repos\\CKEditor-ile-Sunucuya-Resim-Yukleme\\CKEditorImageUploadFtp\\CKEditorImageUploadFtp.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\source\\repos\\CKEditorImageUploadFtp\\CKEditorImageUploadFtp\\obj\\",
+        "outputPath": "C:\\Users\\HP\\source\\repos\\CKEditor-ile-Sunucuya-Resim-Yukleme\\CKEditorImageUploadFtp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

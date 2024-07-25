@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "m4alG8RuehGO7+HSZ9UucIymjV5BKLtf6MwXBbUg9JRM8U1okgs9UTpv+9PzcQV4A+jU2LiD1TnLmU0HaZwtoA==",
+  "dgSpecHash": "HN0xgoDnwgAHfeXASZfv+0qJGe2t2NClN6bIehX1KQWmLnD6cTRaQtb1f9A16bXclSfW2FbR9uHBrp7Gn+wTvg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\HP\\source\\repos\\CKEditorImageUploadFtp\\CKEditorImageUploadFtp\\CKEditorImageUploadFtp.csproj",
+  "projectFilePath": "C:\\Users\\HP\\source\\repos\\CKEditor-ile-Sunucuya-Resim-Yukleme\\CKEditorImageUploadFtp\\CKEditorImageUploadFtp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HP\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

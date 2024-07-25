@@ -1,12 +1,11 @@
 ﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-@model CKEditorImageUploadFtp.Models.models
+@model CKEditorImageUploadFtp.Models.Ckeditor
 @{
     ViewData["Title"] = "Home Page";
 }
 
-@Html.TextAreaFor(m => m.description, new { @id = "description", @class = "formcontrol ckeditor" })
+@Html.TextAreaFor(m => m.description, new { @id = "description", @class = "formcontrol ckeditor" }) @* Burada modeldeki description özelliğine veriyi bağlıyoruz burası zaten tek başına açıklama inputu *@
 
-<a href="~/lib/jquery/dist/jquery.min.map">~/lib/jquery/dist/jquery.min.map</a>
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/jquery/dist/jquery.js"></script>
 <script src="~/ckeditor/ckeditor.js"></script>
